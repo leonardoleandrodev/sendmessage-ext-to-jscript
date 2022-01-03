@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "teste google translator",
+    "description": "teste google translator",
+    "version": "0.0.1",
+    "action": {
+        "default_title": "teste google translator",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": ["tabs"],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "content_scripts": [{
+        "js": ["foreground.js"],
+        "matches": ["*://www.google.com/","*://www.google.com.br/"]
+    }]
+}
